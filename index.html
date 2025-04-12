@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why No? Menü</title>
+
+    <!-- 📌 Import jsPDF library to generate and download the bill as a PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><img src="assets/img/logo.png" class="logo" alt="Why No? Logo"></h1>
+    </header>
+
+    <main>
+        <section class="categories">
+            <!-- Shisha -->
+            <div class="category">
+                <img src="assets/img/icons/hookah.png" alt="Shisha">
+                <h2>Shisha</h2>
+                <button aria-controls="shisha-menu" aria-expanded="false"
+                    onclick="toggleMenu('shisha-menu')">Anzeigen</button>
+                <div class="menu-items" id="shisha-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <td colspan="2"><b>Shisha</b></td>
+                            <tr>
+                                <td>1. Doppelapfel</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>2. Wassermelone</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>3. Blaubeere</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>4. Erdbeere</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>5. Pfirsich</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>6. Mango</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>7. Kirsche</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>8. Maracuja</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>9. Zitrone-Minze</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>10. Blue Ice (Blaubeere + Menthol)</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>11. Love 66 (Wassermelone, Honigmelone, Beeren, Minze)</td>
+                                <td>12.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>12. Black Nana (Traube, Minze, Lakritz)</td>
+                                <td>12.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!-- Heißgetränke-->
+            <div class="category">
+                <img src="assets/img/icons/coffee.png" alt="Heißgetränke">
+                <h2>Heißgetränke</h2>
+                <button aria-controls="warm-drinks-menu" aria-expanded="false"
+                    onclick="toggleMenu('warm-drinks-menu')">Anzeigen</button>
+                <div class="menu-items" id="warm-drinks-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>13. Schwarzer Tee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>14. Schwarzer Tee Frucht</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>15. Pfefferminztee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>16. Waldbeere Tee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>17. Kamillentee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>18. Grüner Tee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>19. Espresso</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>20. Kaffee</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>21. Cappuccino</td>
+                                <td>4.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>22. Latte Macchiato</td>
+                                <td>4.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Softdrinks -->
+            <div class="category">
+                <img src="assets/img/icons/softdrinks.png" alt="Softdrinks">
+                <h2>Softdrinks</h2>
+                <button aria-controls="softdrinks-menu" aria-expanded="false"
+                    onclick="toggleMenu('softdrinks-menu')">Anzeigen</button>
+                <div class="menu-items" id="softdrinks-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><b>Softdrinks</b></td>
+                            </tr>
+                            <tr>
+                                <td>23. Cola 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>24. Cola 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>25. Cola Light 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>26. Cola Light 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>27. Cola Zero 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>28. Cola Zero 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>29. Fanta 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>30. Fanta 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>31. Sprite 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>32. Sprite 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>33. Mezzo Mix 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>34. Mezzo Mix 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>35. Pepsi 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>36. Pepsi Zero 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>37. Ginger Ale 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Säfte & Schorlen</b></td>
+                            </tr>
+                            <tr>
+                                <td>38. Apfelsaftschorle 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>39. Apfelsaftschorle 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>40. Kirschsaft 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>41. Kirschsaft 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>42. Bananensaft 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>43. Bananensaft 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>44. Maracujasaft 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>45. Maracujasaft 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>46. Orangensaft 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>47. Orangensaft 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>48. Ananassaft 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>49. Ananassaft 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Eistee & Fruchtgetränke</b></td>
+                            </tr>
+                            <tr>
+                                <td>50. AriZona Ice Tea Green 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>51. AriZona Ice Tea Peach 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>52. AriZona Ice Tea Pomegranate 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>53. AriZona Ice Tea Blueberry White 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>54. Fuze Tea Schwarzer Tee Zitrone 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>55. Fuze Tea Schwarzer Tee Pfirsich 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Energy Drinks</b></td>
+                            </tr>
+                            <tr>
+                                <td>56. Red Bull</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>57. Moloko</td>
+                                <td>4.00 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Wasser</b></td>
+                            </tr>
+                            <tr>
+                                <td>58. Wasser Sprudel, Medium, Still 0.3l</td>
+                                <td>3.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>59. Wasser Sprudel, Medium, Still 0.5l</td>
+                                <td>4.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Biere & Weine -->
+            <div class="category">
+                <img src="assets/img/icons/beer-wine.png" alt="Biere & Weine">
+                <h2>Biere & Weine</h2>
+                <button aria-controls="beer-wine-menu" aria-expanded="false"
+                    onclick="toggleMenu('beer-wine-menu')">Anzeigen</button>
+                <div class="menu-items" id="beer-wine-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><b>Biere</b></td>
+                            </tr>
+                            <tr>
+                                <td>60. Becks 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>61. Becks 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>62. Bitburger 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>63. Bitburger 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>64. Bitburger Radler 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>65. Heineken 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>66. Desperados</td>
+                                <td>4.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>67. Weizenbier 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>68. Weizenbier Alkoholfrei 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>69. Bier vom Fass 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>70. Bier vom Fass 0.5l</td>
+                                <td>4.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>71. Königsbacher 0.3l</td>
+                                <td>3.50 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Weine (0.2 L)</b></td>
+                            </tr>
+                            <tr>
+                                <td>72. Rotwein
+                                    <p class="drink-description">Trocken, Halbtrocken, Lieblich</p>
+                                </td>
+                                <td>5.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>73. Weißwein
+                                    <p class="drink-description">Trocken, Halbtrocken, Lieblich</p>
+                                </td>
+                                <td>5.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>74. Roséwein
+                                    <p class="drink-description">Trocken, Halbtrocken, Lieblich</p>
+                                </td>
+                                <td>5.50 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Cocktails & Longdrinks -->
+            <div class="category">
+                <img src="assets/img/icons/cocktail.png" alt="Cocktails & Longdrinks">
+                <h2>Cocktails & Longdrinks</h2>
+                <button aria-controls="cocktails-menu" aria-expanded="false"
+                    onclick="toggleMenu('cocktails-menu')">Anzeigen</button>
+                <div class="menu-items" id="cocktails-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><b>Cocktails mit Alkohol</b></td>
+                            </tr>
+                            <tr>
+                                <td>75. Mojito <p class="drink-description">Havanna Rum, Minze, Limette, Soda oder
+                                        Ginger Ale</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>76. Cuba Libre <p class="drink-description">Havanna Rum, Limette, Cola</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>77. Zombie <p class="drink-description">Rum-Mix, Apricot Brandy, Mandelsirup</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>78. Sex on The Beach <p class="drink-description">Wodka, Pfirsichlikör, Orange,
+                                        Cranberry</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>79. Piña Colad <p class="drink-description">Weißer Rum, Ananas, Kokos</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>80. Long Island Iced Tea <p class="drink-description">Wodka, Gin, Rum, Cointreau,
+                                        Cola</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>81. Vodka Sunrise <p class="drink-description">Wodka, Orange, Grenadine</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>82. Moscow Mule <p class="drink-description">Wodka, Limette, Ginger Beer</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>83. Flamingo <p class="drink-description">Rum, Erdbeere, Sahne</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>84. Blue Lagoon <p class="drink-description">Wodka, Blue Curaçao, Zitrone</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>85. Classic Daiquirin <p class="drink-description">Weißer Rum, Limette, Zucker</p>
+                                </td>
+                                <td>9.70 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Alkoholfrei Cocktails</b></td>
+                            </tr>
+                            <tr>
+                                <td>86. Ipanema <p class="drink-description">Limette, Rohrzucker, Ginger Ale</p>
+                                </td>
+                                <td>7.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>87. Ipanema Blue <p class="drink-description">Limette, Blue Sirup, Ginger Ale</p>
+                                </td>
+                                <td>7.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>88. Virgin Sunrise <p class="drink-description">Orange, Zitrone, Grenadine</p>
+                                </td>
+                                <td>7.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>89. Mango-Maracuja <p class="drink-description">Mango, Maracuja, Zitrone</p>
+                                </td>
+                                <td>7.70 €</td>
+                            </tr>
+                            <tr>
+                                <td>90. Virgin Piña Colada <p class="drink-description">Ananas, Kokos, Sahne</p>
+                                </td>
+                                <td>7.70 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Mix-Getränke</b></td>
+                            </tr>
+                            <tr>
+                                <td>91. Wodka Red Bull</td>
+                                <td>7.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>92. Wodka Energie</td>
+                                <td>6.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>93. Wodka Orange</td>
+                                <td>6.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>94. Jacky Cola</td>
+                                <td>6.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>95. Jacky Red Bull</td>
+                                <td>7.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Shots & Flaschen -->
+            <div class="category">
+                <img src="assets/img/icons/shots.png" alt="Shots & Flaschen">
+                <h2>Shots & Flaschen</h2>
+                <button aria-controls="shots-menu" aria-expanded="false"
+                    onclick="toggleMenu('shots-menu')">Anzeigen</button>
+                <div class="menu-items" id="shots-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><b>Shots</b></td>
+                            </tr>
+                            <tr>
+                                <td>96. Tequila</td>
+                                <td>2.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>97. Wodka</td>
+                                <td>2.50 €</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>Flaschen</b></td>
+                            </tr>
+                            <tr>
+                                <td>98. Jack Daniel’s + Energydrink (Flasche)</td>
+                                <td>85.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>99. Jack Daniel’s + 4 Red Bull</td>
+                                <td>85.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>100. Wodka + Energydrink (Flasche)</td>
+                                <td>75.00 €</td>
+                            </tr>
+                            <tr>
+                                <td>101. Wodka + 4 Red Bull</td>
+                                <td>75.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Snacks -->
+            <!-- <div class="category">
+                <img src="assets/img/icons/snacks.png" alt="Snacks">
+                <h2>Snacks</h2>
+                <button aria-controls="snacks-menu" aria-expanded="false"
+                    onclick="toggleMenu('snacks-menu')">Anzeigen</button>
+                <div class="menu-items" id="snacks-menu">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nachos</td>
+                                <td>6.50 €</td>
+                            </tr>
+                            <tr>
+                                <td>Erdnüsse</td>
+                                <td>4.00 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Footer Dynamically -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Cart -->
+    <section class="cart-box">
+        <div id="cart">
+            <h3>Your Order</h3>
+            <ul id="cart-list"></ul>
+            <p id="total-price">Total: 0 €</p>
+            <button id="send-order">Send Order</button>
+        </div>
+    </section>
+
+    <!-- Bill -->
+    <div id="bill" class="bill-container">
+        <h2>Your Bill</h2>
+        <ul id="bill-items"></ul>
+        <p id="bill-total"><strong>Total:</strong> 0.00 €</p>
+        <button id="print-bill">Print</button>
+        <button id="close-bill">Close</button>
+        <button id="reset-order">Reset</button>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="assets/js/script.js" defer></script>
+</body>
+
+</html>
